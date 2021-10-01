@@ -1,0 +1,38 @@
+<!-- contact.ejs
+Saad Shah
+301143620
+October 1, 2021 -->
+<%- include partials/header.ejs %>
+
+<%- include partials/nav.ejs %>
+
+  <main class='container'>
+    <div class='jumbotron'>
+      <h1 class='display-4'>Contact Me</h1>
+    </div>
+    <p> 
+        <div class="panel panel-default">
+            <div class="panel-body">Email address: saadshah98@yahoo.ca<br>Phone Number: 647-571-1645<br></div>
+          </div>
+          You can contact me using the form below. I will get back to you as soon as possible<br>
+        <form>
+            <label for="firstName">First name:</label><br>
+            <input type="text" id="firstName" name="firstName"><br>
+            <label for="lastName">Last name:</label><br>
+            <input type="text" id="lastName" name="lastName"><br>
+            <label for="contactNumber">Contact Number:</label><br>
+            <input type="text" id="contactNumber" name="contactNumber"><br>
+            <label for="email">Email Address:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50">
+                
+                </textarea>
+                <br><br>
+                <input type="button" onclick="location.href='/Home';" value="Submit" />
+
+          </form>
+    </p>
+  </main>  
+  <%- include partials/footer.ejs %>
+</html>
