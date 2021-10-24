@@ -1,0 +1,46 @@
+<!-- list.ejs
+Saad Shah
+301143620
+October 23, 2021 -->
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/nav.ejs %>
+
+<main class="container">
+  <div class="row">
+      <div class="offset-md-1 col-md-3">
+          <h1><%= title %></h1>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+              <!-- Header Row-->
+              <tr class="d-flex">
+                  <th class="text-center col-2">Name</th>
+                  <th class="text-center col-3">Number</th>
+                  <th class="text-center col-5">Email</th>
+                  <th class="text-center col-2"></th>
+                  <th class="text-center col-2"></th>
+              </tr>
+
+              <!-- Repeatable Template Row -->
+              <% for(let count = 0; count < ContactList.length; count++) { %>
+                  <tr class="d-flex">
+                      <td class="text-center col-2"><%= ContactList[count].name %></td>
+                      <td class="text-center col-3"><%= ContactList[count].number %></td>
+                      <td class="text-center col-5"><%= ContactList[count].email %></td>
+                      <td class="text-center col-2">
+                        <a href="/contact-list/update/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                        <i class="fas fa-pencil-alt"></i> Update</a>
+                    </td>
+                    <td class="text-center col-2">
+                        <a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i> Delete</a>
+                    </td>
+                  </tr>
+              <% } %> 
+          </table>
+      </div>
+  </div>
+</main>
+
+  <%- include ../partials/footer.ejs %>
+</html>
